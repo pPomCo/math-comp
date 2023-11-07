@@ -1461,6 +1461,9 @@ Lemma big_set (A : pred I) F :
   \big[op/x]_(i in [set i | A i]) (F i) = \big[op/x]_(i in A) (F i).
 Proof. by apply: eq_bigl => i; rewrite inE. Qed.
 
+Lemma big_set1E j F : \big[op/x]_(i in [set j]) F i = op (F j) x.
+Proof. by rewrite -big_pred1_eq_id; apply: eq_bigl=>i; exact: in_set1. Qed.
+
 Lemma big_condT A F :
   \big[op/x]_(i in A | true) F i = \big[op/x]_(i in A) F i.
 Proof. by apply: eq_bigl=>i ; by rewrite andbT. Qed.
