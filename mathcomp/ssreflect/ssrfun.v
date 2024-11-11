@@ -107,3 +107,5 @@ Qed.
 
 Lemma taggedK T P (s : {x : T & P x}) : Tagged P (tagged s) = s.
 Proof. by case: s. Qed.
+
+Definition xpair {T1 T2} (x : T1 * T2) := (x.2, x.1).
