@@ -116,6 +116,8 @@ Qed.
 Lemma taggedK T P (s : {x : T & P x}) : Tagged P (tagged s) = s.
 Proof. by case: s. Qed.
 
+Definition xpair {T1 T2} (x : T1 * T2) := (x.2, x.1).
+
 Definition idempotent_op (S : Type) (op : S -> S -> S) := forall x, op x x = x.
 
 #[deprecated(since="mathcomp 2.3.0", note="use `idempotent_op` instead")]
